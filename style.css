@@ -1,0 +1,191 @@
+*
+{
+    margin:0;
+    padding:0;
+
+}
+
+body 
+{
+    width:100vw;
+    height:100vh;
+    background:white;
+    display:flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header 
+{
+    width:100vw;
+    height:50px;
+    background:white;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.who-turn 
+{
+    position:absolute;
+    left:0;
+    width:70px;
+    height:40px;
+    background:#f714b9;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 
+{
+    font-size:9px;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 1000;
+    font-family:'Open Sans';
+    color:white;
+    margin-right:10px;
+}
+
+
+.score-holder
+ {
+     height:100%;
+     position: relative;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     margin:0px 10px;
+
+     
+ }
+
+ h2 
+ {
+     font-size:35px;
+     line-height: 35px;
+     color:black;
+     letter-spacing: 2px;
+    position: relative;
+    font-weight: 1000;
+    font-family:'Open Sans';
+ }
+
+
+ p1
+ {
+     font-size:13px;
+     letter-spacing: 2px;
+     position: relative;
+     font-weight: 1000;
+     font-family:'Open Sans';
+     margin-top:5px;
+ }
+
+ section{
+     width:100vw;
+     height:fit-content;
+     display:flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin-top:20px;
+ }
+
+ .box
+ {
+     width:22vw;
+     height:22vw;
+    margin:2px;
+    background:#fadf52;
+    border-radius:10px;
+    border:none;
+ }
+
+.box-circle 
+{
+    background-image:url("images/circle_box.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.box-cross
+{
+    background-image:url("images/cross_box.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.box-triangle
+{
+    background-image:url("images/triangle_box.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .hamburger-btn
+ {
+    width:50px;
+    height:50px;
+    position:absolute;
+    right:10px;
+    border:none;
+    outline: none;
+    background:none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .hamburger-btn span 
+ {
+    background:#f714b9;
+    width:30px;
+    height:4px;
+    position:absolute;
+ }
+
+
+ .first 
+ {
+    transition:0.4s;
+    transform:translateY(-10px);
+ }
+
+ .second
+ {
+    transition:0.4s;
+    opacity:1;
+ }
+
+ .third
+ {
+    transition:0.4s;
+    transform:translateY(10px);
+ }
