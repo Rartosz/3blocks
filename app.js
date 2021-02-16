@@ -18,18 +18,73 @@ let losowanie = () =>
     boxes[temp].className = " "; 
     boxes[temp].classList.add("box");
     boxes[temp].classList.add(shapes[whichShape]);
+    check();
   }
 
 
 }
 
 
+let check = () => 
+{
+    for(let i=0; i<boxes.length; i++) 
+    {
+       if(boxes[i].className=="box")
+       {
+           return 0;
+       }
+       else 
+       {
+
+       
+        if(i==0 || i==1 || i==4 || i==5)
+        {
+           if(boxes[i].className==boxes[i+1].className && boxes[i].className==boxes[i+2].className)
+           {
+               alert("BRAWO! POZIOMO!");
+           }
+           else if(boxes[i].className==boxes[i+4].className && boxes[i].className==boxes[i+8].className)
+           {
+            alert("BRAWO! PIONOWO!");
+           }
+           else if(boxes[i].className==boxes[i+5].className && boxes[i].className==boxes[i+10].className)
+           {
+            alert("BRAWO! NA UKOS!");
+           }
+        }
+
+        else if(i==2 || i==3 || i==6 || i==7)
+        {
+           if(boxes[i].className==boxes[i+4].className && boxes[i].className==boxes[i+8].className)
+           {
+            alert("BRAWO! PIONOWO!");
+           }
+           else if(boxes[i].className==boxes[i+3].className && boxes[i].className==boxes[i+6].className)
+           {
+            alert("BRAWO! NA UKOS!");
+           }
+        }
+
+        else if(i==8 || i==9 || i==12 || i==13)
+        {
+           if(boxes[i].className==boxes[i+1].className && boxes[i].className==boxes[i+2].className)
+           {
+               alert("BRAWO! POZIOMO!");
+           }
+         
+        }
+        
+
+    }
+
+
+    }
+}
 
 
 
-let button = document.querySelector("button");
 
-button.addEventListener("click", losowanie);
+
 let actualShape = 0;
 for(let i=0; i<boxes.length; i++)
 {
@@ -53,7 +108,13 @@ for(let i=0; i<boxes.length; i++)
                 actualShape++;
             }
 
-            setTimeout(function(){ losowanie(); }, 1000);
+            for(let j=0; j<boxes.length; j++) 
+            {
+                boxes[j].style.pointerEvents = "none";
+                setTimeout(function(){boxes[j].style.pointerEvents = "auto"; }, 1000);
+            }
+            check();
+            setTimeout(function(){ losowanie();}, 1000);
            
             
         }
