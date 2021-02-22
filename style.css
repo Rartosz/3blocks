@@ -52,6 +52,19 @@ h1
     font-family:'Open Sans';
     color:white;
     margin-right:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 img 
+{
+    width:30px;
+    height:30px;
+    border:none;
+    outline: none;
+    
+    
 }
 
 
@@ -134,8 +147,6 @@ h1
     background-repeat: no-repeat;
     background-position: center;
 }
-
-
 
 
 

@@ -1,5 +1,14 @@
 let boxes = [...document.querySelectorAll(".box")];
 let shapes = [`box-circle`, `box-cross`, `box-triangle`];
+let compScoreContainer = document.querySelector("#computerScore");
+let playerScoreContainer = document.querySelector("#playerScore");
+let playerScore = 0;
+
+let computerScore = 0; 
+
+compOrPlayer=1;
+
+
 
 let losowanie = () => 
 {
@@ -12,7 +21,6 @@ let losowanie = () =>
   {
                 losowanie(); 
   }
-
   else 
   {
     boxes[temp].className = " "; 
@@ -31,7 +39,7 @@ let check = () =>
     {
        if(boxes[i].className=="box")
        {
-           return 0;
+           
        }
        else 
        {
@@ -41,15 +49,31 @@ let check = () =>
         {
            if(boxes[i].className==boxes[i+1].className && boxes[i].className==boxes[i+2].className)
            {
-               alert("BRAWO! POZIOMO!");
+                boxes[i].className="box";
+                boxes[i+1].className="box";
+                boxes[i+2].className="box";
+
+                
+                playerScore++;
+                playerScoreContainer.textContent = playerScore;
            }
            else if(boxes[i].className==boxes[i+4].className && boxes[i].className==boxes[i+8].className)
            {
-            alert("BRAWO! PIONOWO!");
+            boxes[i].className="box";
+            boxes[i+4].className="box";
+            boxes[i+8].className="box";
+
+            playerScore++;
+            playerScoreContainer.textContent = playerScore;
            }
            else if(boxes[i].className==boxes[i+5].className && boxes[i].className==boxes[i+10].className)
            {
-            alert("BRAWO! NA UKOS!");
+            boxes[i].className="box";
+            boxes[i+5].className="box";
+            boxes[i+10].className="box";
+
+            playerScore++;
+            playerScoreContainer.textContent = playerScore;
            }
         }
 
@@ -57,20 +81,35 @@ let check = () =>
         {
            if(boxes[i].className==boxes[i+4].className && boxes[i].className==boxes[i+8].className)
            {
-            alert("BRAWO! PIONOWO!");
+            boxes[i].className="box";
+            boxes[i+4].className="box";
+            boxes[i+8].className="box";
+
+            playerScore++;
+            playerScoreContainer.textContent = playerScore;
            }
            else if(boxes[i].className==boxes[i+3].className && boxes[i].className==boxes[i+6].className)
            {
-            alert("BRAWO! NA UKOS!");
+            boxes[i].className="box";
+            boxes[i+3].className="box";
+            boxes[i+6].className="box";
+
+            playerScore++;
+            playerScoreContainer.textContent = playerScore;
            }
         }
 
         else if(i==8 || i==9 || i==12 || i==13)
         {
-           if(boxes[i].className==boxes[i+1].className && boxes[i].className==boxes[i+2].className)
-           {
-               alert("BRAWO! POZIOMO!");
-           }
+            if(boxes[i].className==boxes[i+1].className && boxes[i].className==boxes[i+2].className)
+            {
+                 boxes[i].className="box";
+                 boxes[i+1].className="box";
+                 boxes[i+2].className="box";
+ 
+                 playerScore++;
+                 playerScoreContainer.textContent = playerScore;
+            }
          
         }
         
@@ -113,6 +152,8 @@ for(let i=0; i<boxes.length; i++)
                 boxes[j].style.pointerEvents = "none";
                 setTimeout(function(){boxes[j].style.pointerEvents = "auto"; }, 1000);
             }
+            check();
+            check();
             check();
             setTimeout(function(){ losowanie();}, 1000);
            
