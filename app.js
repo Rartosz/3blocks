@@ -3,6 +3,18 @@ let shapes = [`box-circle`, `box-cross`, `box-triangle`];
 let compScoreContainer = document.querySelector("#computerScore");
 let playerScoreContainer = document.querySelector("#playerScore");
 let playerScore = 0;
+let nextMove = ["images/circle_box.svg", "images/cross_box.svg", "images/triangle_box.svg"];
+let nextMoveContainer = document.querySelector(".next");
+
+
+let game = document.querySelector("section");
+let endGame = document.querySelector(".endGame");
+let endScore = document.querySelector(".endScore");
+let playAgainBtn = document.querySelector(".playAgainBtn");
+
+
+
+
 
 let computerScore = 0; 
 
@@ -121,10 +133,27 @@ let check = () =>
 }
 
 
-
+let checkAll = function() 
+{
+    let temp =0; 
+    for(let i=0; i<boxes.length; i++)
+    {
+        if(boxes[i].classList.contains("box-circle") || boxes[i].classList.contains("box-cross") || boxes[i].classList.contains("box-triangle"))
+        {
+            temp++;
+            if(temp == boxes.length)
+            {
+                game.style.display = "none";
+                endGame.style.display = "flex";
+                endScore.innerHTML = playerScore;
+            }
+        }
+    }
+}
 
 
 let actualShape = 0;
+let next = 1;
 for(let i=0; i<boxes.length; i++)
 {
     boxes[i].addEventListener("click",function() 
@@ -138,6 +167,7 @@ for(let i=0; i<boxes.length; i++)
         else 
         {
             boxes[i].classList.add(shapes[actualShape]);
+            nextMoveContainer.src = nextMove[next];
             if(actualShape==2)
             {
                 actualShape=0;
@@ -145,6 +175,15 @@ for(let i=0; i<boxes.length; i++)
             else 
             {
                 actualShape++;
+            }
+
+            if(next==2)
+            {
+                next=0;
+            }
+            else 
+            {
+                next++;
             }
 
             for(let j=0; j<boxes.length; j++) 
@@ -156,8 +195,28 @@ for(let i=0; i<boxes.length; i++)
             check();
             check();
             setTimeout(function(){ losowanie();}, 1000);
-           
+            checkAll();
             
         }
+
+
     });
 }
+
+setInterval(() => {
+    checkAll();
+},1000);
+
+
+playAgainBtn.addEventListener("click", function() 
+{
+
+    playerScore = 0;
+    for(let i=0; i<boxes.length; i++)
+    {
+        boxes[i].className="box";
+    }
+    endGame.style.display="none";
+    game.style.display = "flex";
+    playerScoreContainer.textContent=0;
+})
