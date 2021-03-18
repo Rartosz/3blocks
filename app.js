@@ -48,6 +48,7 @@ let losowanie = () =>
     boxes[temp].classList.add("box");
     boxes[temp].classList.add(shapes[whichShape]);
     check();
+    checkAll();
   }
 
 
@@ -228,9 +229,9 @@ playAgainBtn.addEventListener("click", function()
     game.style.display = "flex";
     playerScoreContainer.textContent=0;
 
-    theInterval = setInterval(() => {
-        checkAll();
-    },1000);
+    // theInterval = setInterval(() => {
+    //     checkAll();
+    // },1000);
 });
 
 
@@ -271,9 +272,9 @@ playBtn.addEventListener("click", function()
     mainScreen.style.display="none";
     playerScoreContainer.textContent=0;
 
-    theInterval = setInterval(() => {
-        checkAll();
-    },1000);
+    // theInterval = setInterval(() => {
+    //     checkAll();
+    // },1000);
 });
 
 
@@ -288,5 +289,5 @@ goBackToMenuFromInGameBtn.addEventListener("click", function()
 {
     menu.style.display="none";
     mainScreen.style.display="flex";
-    clearInterval(theInterval);
+    // clearInterval(theInterval);
 });
