@@ -10,12 +10,20 @@ let nextMoveContainer = document.querySelector(".next");
 let game = document.querySelector("section");
 let endGame = document.querySelector(".endGame");
 let endScore = document.querySelector(".endScore");
-let playAgainBtn = document.querySelector(".playAgainBtn");
+let playAgainBtn = document.querySelector(".backToMenuBtn");
+
+
+let menuBtn = document.querySelector(".hamburger-btn");
+let closeMenuBtn = document.querySelector(".closeMenu");
+let restartBtn = document.querySelector(".restart");
+let menu = document.querySelector(".menu");
 
 
 
-
-
+let playBtn = document.querySelector(".play");
+let mainScreen = document.querySelector("#mainScreen");
+let goBackToMenuFromEndGameBtn = document.querySelector(".playAgainBtn");
+let goBackToMenuFromInGameBtn = document.querySelector(".exit");
 let computerScore = 0; 
 
 compOrPlayer=1;
@@ -143,7 +151,8 @@ let checkAll = function()
             temp++;
             if(temp == boxes.length)
             {
-                game.style.display = "none";
+                //game.style.display = "none";
+                menu.style.display="none";
                 endGame.style.display = "flex";
                 endScore.innerHTML = playerScore;
             }
@@ -219,4 +228,56 @@ playAgainBtn.addEventListener("click", function()
     endGame.style.display="none";
     game.style.display = "flex";
     playerScoreContainer.textContent=0;
-})
+});
+
+
+menuBtn.addEventListener("click", function() 
+{
+    menu.style.display="flex";
+});
+
+closeMenuBtn.addEventListener("click", function() 
+{
+    menu.style.display = "none";
+});
+
+
+restartBtn.addEventListener("click", function() 
+{
+
+    playerScore = 0;
+    for(let i=0; i<boxes.length; i++)
+    {
+        boxes[i].className="box";
+    }
+    menu.style.display="none";
+    game.style.display = "flex";
+    playerScoreContainer.textContent=0;
+});
+
+
+
+playBtn.addEventListener("click", function() 
+{
+
+    playerScore = 0;
+    for(let i=0; i<boxes.length; i++)
+    {
+        boxes[i].className="box";
+    }
+    mainScreen.style.display="none";
+    playerScoreContainer.textContent=0;
+});
+
+
+goBackToMenuFromEndGameBtn.addEventListener("click", function() 
+{
+    endGame.style.display="none";
+    mainScreen.style.display="flex";
+});
+
+goBackToMenuFromInGameBtn.addEventListener("click", function() 
+{
+    menu.style.display="none";
+    mainScreen.style.display="flex";
+});

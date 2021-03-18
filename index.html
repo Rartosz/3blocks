@@ -10,10 +10,26 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet"> 
 
     </head>
     <body>
  
+
+        <div id="mainScreen">
+            <button id="info-button"><img src="images/info.png"></button>
+            <div class="wrapper">
+                <img src="images/crossColor.svg">
+                <img src="images/triangleColor.svg">
+                <img src="images/circleColor.svg">
+            </div>
+            <img src="images/logo.svg" id="logo">
+            <button class="mainScreenBtn play">PLAY</button>
+            <button class="mainScreenBtn">LEADERBOARD</button>
+            <button class="mainScreenBtn">RATE US</button>
+
+
+        </div>
 
         <header>
             <div class="who-turn">
@@ -25,7 +41,7 @@
                 <h2 id="playerScore">0</h2>
             </span>
             <span class="score-holder">
-                <p1 style="color:#f714b9;" >SCORE</p1>
+                <p1 style="color:#f714b9;" >HIGH SCORE</p1>
                 <h2 id="computerScore">0</h2>
             </span>
 
@@ -36,7 +52,7 @@
             </button>
         </header>
 
-        <section>
+        <section >
             <button class="box "></button>
             <button class="box"></button>
             <button class="box "></button>
@@ -58,15 +74,39 @@
             <button class="box"></button>
         </section>
 
-        <div class="endGame">
-            <h4>GAME OVER</h4>
-            <h3>Your total score: <span class="endScore">69</span></h3>
-            
 
-            <div class="holder">
-                <button class="backToMenuBtn" style="color:#f714b9;"><img src="images/back.png" >GO BACK</button>
-                <button class="playAgainBtn" style="color:#3c94fa;"><img src="images/replay.png" >PLAY AGAIN</button>
+        <div class="menu">
+            <div class="content" style="border-color: #3a80cf;">
+                <button class="menuBtn">SOUND</button>
+                <button class="menuBtn restart">RESTART</button>
+                <button class="menuBtn exit">EXIT TO MENU</button>
+
+                <button class="closeMenu">BACK</button>
             </div>
+            
+                
+
+        </div>
+
+
+
+        <div class="endGame">
+
+            <div class="content">
+                <h4>GAME OVER</h4>
+                <h5>YOUR SCORE:</h5>
+                <h3><span class="endScore">69</span></h3>
+                <h6>Your high score</h6>
+                <h7>120</h7>
+
+
+
+                <div class="holder">
+                    <button class="backToMenuBtn">PLAY AGAIN</button>
+                    <button class="playAgainBtn"><img src="images/home.png"></button>
+                </div> 
+            </div>
+
         </div>
 
 

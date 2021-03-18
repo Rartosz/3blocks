@@ -17,6 +17,29 @@ body
     justify-content: flex-start;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+!!!!!!!!!!!!!!!!!!!!!!! STYLE PLANSZY GIER !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+
+
+
 header 
 {
     width:100vw;
@@ -103,6 +126,30 @@ h1 img
      margin-top:5px;
  }
 
+
+
+
+
+
+
+
+
+/* 
+
+!!!!!!!!!!!!!!!!!!!!!!! STYLE PLANSZY GIER !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+
+
+
+
+
+
+
+
+
  section{
      width:100vw;
      height:fit-content;
@@ -112,6 +159,8 @@ h1 img
      justify-content: center;
      flex-wrap: wrap;
      margin-top:20px;
+
+
  }
 
  .box
@@ -193,93 +242,395 @@ h1 img
 
 
 
+
+
+
+
+
+
+ /* 
+
+!!!!!!!!!!!!!!!!!!!!!!! STYLE PO PRZEGRANEJ GRZE  !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+
+
+
+
  .endGame 
  {
     width:100vw;
-    height:calc(100vh - 50px);
+    height:100vh;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:20px;
 
+    background:rgba(255, 255, 255, 0.829);
     display:none;
+    position:absolute;
+    top:0;
+    z-index:9999;
  }
 
- h3 
+
+
+ .content 
  {
-    font-size:20px;
-    line-height: 25px;
-    color:#f714b9;
-    letter-spacing: 2px;
-   position: relative;
-   font-weight: 1000;
-   font-family:'Open Sans';
+     width:90vw;
+     min-height:80vw;
+     height:fit-content;
+     background:white;
+     border-radius:25px;
+     border:3px solid #d118a0;
+     position:relative;
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start; 
+
  }
+
+
 
  .endGame span 
  {
-    font-size:30px;
-    line-height: 35px;
-    color:#3c94fa;
+    font-size:60px;
+    color:#000000;
     letter-spacing: 2px;
    position: relative;
    font-weight: 1000;
    font-family:'Open Sans';
+   margin:0px 0px;
+   text-align: center;
+ }
 
+ h4 
+ {
+    font-size:35px;
+    color:#f714b9;
+    letter-spacing: 2px;
+   position: relative;
+   font-family: 'Ubuntu', sans-serif;
+   margin:10px 0px;
+   text-align: center;
+   background: #b432ae;
+background: -webkit-linear-gradient(to right, #b432ae 0%, #F714B9 100%);
+background: -moz-linear-gradient(to right, #b432ae 0%, #F714B9 100%);
+background: linear-gradient(to right, #b432ae 0%, #F714B9 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+ }
+
+
+ h5 
+ {
+    font-size:35px;
+    line-height: 35px;
+    color:#b432ae;
+    letter-spacing: 2px;
+   position: relative;
+   font-weight: 1000;
+   font-family: 'Ubuntu', sans-serif;
+   text-align: center;
+   background: #3C94FA;
+background: -webkit-linear-gradient(to right, #3C94FA 0%, #0de4d2 100%);
+background: -moz-linear-gradient(to right, #3C94FA 0%, #0de4d2 100%);
+background: linear-gradient(to right, #3C94FA 0%, #0de4d2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+ }
+
+
+ h6
+ {
+    font-size:20px;
+    color:#b432ae;
+    letter-spacing: 2px;
+   position: relative;
+   font-weight: 1000;
+   font-family: 'Ubuntu', sans-serif;
+   text-align: center;
+   background: #3C94FA;
+background: -webkit-linear-gradient(to right, #3C94FA 0%, #0de4d2 100%);
+background: -moz-linear-gradient(to right, #3C94FA 0%, #0de4d2 100%);
+background: linear-gradient(to right, #3C94FA 0%, #0de4d2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-top:10px;
+
+ }
+
+h7
+ {
+    font-size:23px;
+    color:#000000;
+    letter-spacing: 2px;
+   position: relative;
+   font-weight: 1000;
+   font-family:'Open Sans';
+   margin:0px 0px;
+   text-align: center;
  }
 
 
  .holder
  {
-     width:100vw;
+     width:90vw;
      display:flex;
      flex-direction: row;
      align-items: center;
-     justify-content: center;
+     justify-content: flex-start;
      height: fit-content;
-     margin-top:30px;
+     margin-top:0px;
+   position:absolute;
+   bottom:0;
+   transform:translateY(30px);
  }
 
 
  .holder button 
  {
-    width:90px;
-    height:90px;
-   margin:10px 20px;
-   background:#fadf52;
+    height:60px;
    border-radius:10px;
    border:none;
    display:flex;
-   flex-direction: column;
+   flex-direction: row;
    align-items: center;
    justify-content: center;
+   font-size:25px;
+    color:white;
+    letter-spacing: 3px; 
 
-   font-size:11px;
-   line-height: 12px;
-
-    letter-spacing: 1px;
-   font-weight: 1000;
-   font-family:'Open Sans';
+   font-weight: 500;
+   font-family: 'Ubuntu', sans-serif;
+   margin:0px 10px;
+   background: rgb(180,50,174);
+    background: linear-gradient(90deg, rgba(180,50,174,1) 0%, rgba(247,20,185,1) 100%);
  }
 
  
  .holder button img 
  {
-     width:55px;
-     height:55px;
-     margin-bottom:10px;
+     width:40px;
+     height:40px;
+
  }
 
- h4 
+
+ .backToMenuBtn 
  {
-    font-size:40px;
-    line-height: 45px;
-    color:#f714b9;
-    letter-spacing: 2px;
-   position: relative;
-   font-weight: 1000;
-   /* font-family:'Open Sans'; */
-   font-family: 'Jura', sans-serif;
-   margin-bottom:50px;
+     width:calc(90vw - 100px);
  }
+
+ .playAgainBtn 
+ {
+     width:60px;
+     
+ }
+ 
+
+
+
+
+
+
+
+
+/* 
+
+!!!!!!!!!!!!!!!!!!!!!!! STYLE MENU ROZWIJANEGO W GRZE !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+
+ 
+ .menu
+ {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:rgba(255, 255, 255, 0.829);
+    display:flex;
+    position:absolute;
+    top:0;
+    z-index:9999;
+
+    display:none;
+ }
+
+ .menu .content 
+ {
+    justify-content: center !important; 
+ }
+
+ .menuBtn 
+ {
+    height:60px;
+    width:80vw;
+    margin:10px 0px;
+    border-radius:25px;
+    border:none;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size:27px;
+     color:white;
+     letter-spacing: 3px;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    background: rgb(60,148,250);
+background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100%);
+ }
+
+
+ .closeMenu 
+ {
+    height:fit-content;
+    width:fit-content;
+    padding:7px 15px;
+    margin:10px 0px;
+    border-radius:25px;
+    border:none;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size:20px;
+     color:white;
+     letter-spacing: 2px;
+    font-weight: 100;
+    font-family: 'Ubuntu', sans-serif;
+    background: rgb(180,50,174);
+    background: linear-gradient(90deg, rgba(180,50,174,1) 0%, rgba(247,20,185,1) 100%);
+    position:absolute;
+    bottom:0;
+    transform:translateY(30px);
+ }
+
+
+
+
+
+
+ #mainScreen 
+ {
+     width:100vw;
+     position:absolute;
+     top:0;
+     height:100vh;
+     z-index:888;
+     background:white;
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ #info-button 
+ {
+     width:30px;
+     height:30px;
+     position:absolute;
+     right:10px;
+     top:10px;
+     border:none;
+     border-radius:5px;
+     background:#f714b9;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ #info-button img 
+ {
+     width:25px;
+     height: 25px;
+ }
+
+ .wrapper 
+ {
+     width:100vw;
+     height:fit-content;
+     display:flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     margin:5px 0px;
+ }
+
+ .wrapper img 
+ {
+     width:20px;
+     height:20px;
+     margin:0px 10px;
+ }
+
+
+ #logo 
+ {
+     width:80vw;
+     margin:15px 0px;
+ }
+
+
+
+
+ .mainScreenBtn
+ {
+    height:60px;
+    width:80vw;
+    margin:10px 0px;
+    border-radius:25px;
+    border:none;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size:27px;
+     color:white;
+     letter-spacing: 3px;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+   
+ }
+
+ .mainScreenBtn:nth-of-type(2)
+ {
+    background: rgb(180,50,174);
+    background: linear-gradient(90deg, rgb(161, 46, 156) 0%, rgba(247,20,185,1) 100%);
+ }
+
+ .mainScreenBtn:nth-of-type(3)
+ {
+    background: rgb(60,148,250);
+    background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100%);
+ }
+
+ .mainScreenBtn:nth-of-type(4)
+ {
+    background: rgb(60,148,250);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
