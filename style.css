@@ -502,6 +502,7 @@ background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100
  {
     height:fit-content;
     width:fit-content;
+    min-width:90px !important;
     padding:7px 15px !important;
     margin:10px 0px;
     border-radius:25px;
