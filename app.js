@@ -28,6 +28,7 @@ let computerScore = 0;
 
 compOrPlayer=1;
 
+let theInterval;
 
 
 let losowanie = () => 
@@ -212,9 +213,7 @@ for(let i=0; i<boxes.length; i++)
     });
 }
 
-setInterval(() => {
-    checkAll();
-},1000);
+
 
 
 playAgainBtn.addEventListener("click", function() 
@@ -228,6 +227,10 @@ playAgainBtn.addEventListener("click", function()
     endGame.style.display="none";
     game.style.display = "flex";
     playerScoreContainer.textContent=0;
+
+    theInterval = setInterval(() => {
+        checkAll();
+    },1000);
 });
 
 
@@ -267,6 +270,10 @@ playBtn.addEventListener("click", function()
     }
     mainScreen.style.display="none";
     playerScoreContainer.textContent=0;
+
+    theInterval = setInterval(() => {
+        checkAll();
+    },1000);
 });
 
 
@@ -274,10 +281,12 @@ goBackToMenuFromEndGameBtn.addEventListener("click", function()
 {
     endGame.style.display="none";
     mainScreen.style.display="flex";
+    clearInterval(theInterval);
 });
 
 goBackToMenuFromInGameBtn.addEventListener("click", function() 
 {
     menu.style.display="none";
     mainScreen.style.display="flex";
+    clearInterval(theInterval);
 });

@@ -498,7 +498,7 @@ background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100
  {
     height:fit-content;
     width:fit-content;
-    padding:7px 15px;
+    padding:7px 15px !important;
     margin:10px 0px;
     border-radius:25px;
     border:none;
@@ -516,6 +516,7 @@ background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100
     position:absolute;
     bottom:0;
     transform:translateY(30px);
+    outline: none;
  }
 
 
