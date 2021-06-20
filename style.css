@@ -621,6 +621,7 @@ background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100
  {
     background: rgb(60,148,250);
     background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100%);
+    opacity:0.5;
  }
 
  .mainScreenBtn:nth-of-type(4)
@@ -636,7 +637,79 @@ background: linear-gradient(90deg, rgba(60,148,250,1) 0%, rgba(13,228,210,1) 100
 
 
 
+/* !!!!!!!!!!!!!!!!!!!!  HOW TO PLAY CONTAINER  !!!!!!!!!!!!!!!!!!!!!!! */
 
 
 
+.howToPlay
+{
+   width:100vw;
+   height:100vh;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   background:rgb(255, 255, 255);
+   display:none;
+   position:absolute;
+   top:0;
+   z-index:9999;
 
+
+
+}
+
+.howToPlay__backBtn 
+{
+    width:50px;
+    height:30px;
+    position:absolute;
+    left:10px;
+    top:10px;
+    border:none;
+    border-radius:5px;
+    background:#f714b9;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size:15px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family:'Open Sans';
+    border:none;
+
+}
+
+h8 
+{
+    font-size:20px;
+     line-height: 20px;
+     color:black;
+     letter-spacing: 2px;
+    position: relative;
+    font-weight: 500;
+    font-family:'Open Sans';
+    text-align: center;
+    margin-top:80px;
+}
+
+p2 
+{
+    font-size:15px;
+     line-height: 20px;
+     color:black;
+     letter-spacing: 1px;
+    position: relative;
+    font-weight: 500;
+    font-family:'Open Sans';
+    text-align: center;
+    margin-top:20px;
+    width:90vw;
+}
+
+.howToPlay img 
+{
+    height:300px;
+    margin:10px 0px;
+}

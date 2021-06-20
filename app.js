@@ -1,3 +1,8 @@
+document.addEventListener('deviceready', function() 
+{
+
+
+
 let boxes = [...document.querySelectorAll(".box")];
 let shapes = [`box-circle`, `box-cross`, `box-triangle`];
 let compScoreContainer = document.querySelector("#computerScore");
@@ -12,6 +17,9 @@ let endGame = document.querySelector(".endGame");
 let endScore = document.querySelector(".endScore");
 let playAgainBtn = document.querySelector(".backToMenuBtn");
 
+let infoBtn = document.querySelector("#info-button");
+let howToPlay = document.querySelector(".howToPlay");
+let howToPlay__backBtn = document.querySelector(".howToPlay__backBtn");
 
 let menuBtn = document.querySelector(".hamburger-btn");
 let closeMenuBtn = document.querySelector(".closeMenu");
@@ -28,7 +36,28 @@ let computerScore = 0;
 
 compOrPlayer=1;
 
+let endgameHighScoreContainer = document.querySelector("#endGame__highScore");
+
 let theInterval;
+
+if(typeof(Storage) !== "undefined")
+{
+    if (localStorage.highScore) 
+    {
+        localStorage.highScore = Number(localStorage.highScore);
+        compScoreContainer.textContent = localStorage.highScore;
+        endgameHighScoreContainer.textContent = localStorage.highScore;
+        
+    }
+    else
+    {
+        localStorage.highScore = 0;
+        compScoreContainer.textContent = localStorage.highScore;
+        endgameHighScoreContainer.textContent = localStorage.highScore;
+    }    
+} 
+
+
 
 
 let losowanie = () => 
@@ -153,10 +182,25 @@ let checkAll = function()
             temp++;
             if(temp == boxes.length)
             {
-                //game.style.display = "none";
                 menu.style.display="none";
                 endGame.style.display = "flex";
                 endScore.innerHTML = playerScore;
+
+                if(playerScore>localStorage.highScore)
+                {
+                    localStorage.highScore = Number(playerScore);
+                    compScoreContainer.textContent = localStorage.highScore;
+                    endgameHighScoreContainer.textContent = localStorage.highScore;
+                }
+
+                setTimeout(function() 
+                {
+                    admob.interstitial.config({
+                        id: 'ca-app-pub-3022494646066257/7659244731',
+                       });
+                       admob.interstitial.prepare();
+                       admob.interstitial.show();
+                },3000);
             }
         }
     }
@@ -278,6 +322,21 @@ playBtn.addEventListener("click", function()
 });
 
 
+infoBtn.addEventListener("click", function() 
+{
+
+    mainScreen.style.display="none";
+    howToPlay.style.display = "flex";
+
+});
+
+howToPlay__backBtn.addEventListener("click", function() 
+{
+    howToPlay.style.display="none";
+    mainScreen.style.display = "flex";
+});
+
+
 goBackToMenuFromEndGameBtn.addEventListener("click", function() 
 {
     endGame.style.display="none";
@@ -290,4 +349,7 @@ goBackToMenuFromInGameBtn.addEventListener("click", function()
     menu.style.display="none";
     mainScreen.style.display="flex";
     // clearInterval(theInterval);
+});
+
+
 });
